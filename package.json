@@ -1,0 +1,24 @@
+{
+  "name": "todolist",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "antd": "^4.4.0",
+    "bcrypt": "^5.0.0",
+    "formidable": "^1.2.2",
+    "formidable-serverless": "^1.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "next": "9.4.4",
+    "next-cookies": "^2.0.3",
+    "rc-queue-anim": "^1.8.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "swr": "^0.2.3"
+  }
+}
