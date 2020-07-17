@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import formidable from "formidable";
 import query from "../../lib/mysql";
+import fs from "fs";
 
 export const config = {
   api: {
@@ -41,8 +42,15 @@ export default async (req, res) => {
             }
           })
           .on("fileBegin", async (name, file) => {
-            // file.path = form.uploadDir + "/" + tkData.username + ".png";
             const url = file.path.replace("public/", "");
+
+            // Delete old avatar
+            var result = await query(
+              "SELECT avatar FROM user WHERE id = ?",
+              tkData.id
+            );
+            fs.unlinkSync("public/" + result[0].avatar);
+
             await query("UPDATE user SET avatar = ? WHERE id = ?", [
               url,
               tkData.id,

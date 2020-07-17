@@ -203,7 +203,7 @@ export default function Home({ user, list }) {
                 size={100}
                 src={user.avatar ? user.avatar : null}
                 style={{
-                  boxShadow: "0 0 15px #654062",
+                  boxShadow: "0 0 10px rgba(50, 130, 184, 0.5)",
                   marginBottom: "10px",
                 }}
               >
