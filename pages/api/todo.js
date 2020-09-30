@@ -28,7 +28,7 @@ export default async (req, res) => {
             break;
 
         case "POST":
-            var content = req.body.todo.replace(/[\u0800-\uFFFF]/g, "");
+            var content = req.body.todo;
             if (!content || content.trim().length === 0) {
                 res.status(400).json({
                     message: "Very veryyyy bad request! 😵",
